@@ -47,6 +47,12 @@ print("\n📝 Transcription:\n")
 print(result["text"])
 ```
 
+## 🔊 Sample Audio Playback
+
+<audio controls>
+  <source src="Sample Audio.mp3" type="audio/mpeg">
+</audio>
+
 ## ✅ Output
 
 The script outputs a punctuated paragraph of transcribed audio.
