@@ -1,14 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sample Audio Playback</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Whisper MP3 Transcription</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    audio {
+      width: 100%;
+      margin: 1rem 0;
+    }
+    pre {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 5px;
+      overflow-x: auto;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    code {
+      font-family: monospace;
+    }
+    .transcription {
+      background: #fff;
+      padding: 1rem;
+      border-left: 5px solid #3498db;
+      border-radius: 5px;
+      margin-top: 1rem;
+      white-space: pre-wrap;
+    }
+  </style>
 </head>
 <body>
-  <h1>🎵 Sample Audio Playback</h1>
+
+  <h1>🎤 Whisper MP3 Transcription</h1>
+  <p>This project uses OpenAI's Whisper ASR model to transcribe MP3 audio files into readable text paragraphs with proper punctuation.</p>
+
+  <h2>🔊 Audio Playback</h2>
   <audio controls>
     <source src="sample-audio.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
+
+  <h2>📝 Transcription</h2>
+  <div class="transcription">
+    <!-- Replace this with actual transcription -->
+    Welcome to the Whisper MP3 Transcription demo. This project showcases the capabilities of OpenAI's Whisper model in transcribing audio files.
+  </div>
+
+  <h2>👨‍💻 Intern Details</h2>
+  <ul>
+    <li><strong>Company:</strong> CODTECH IT SOLUTIONS</li>
+    <li><strong>Name:</strong> Emil Saj Abraham</li>
+    <li><strong>Intern ID:</strong> CT08DL252</li>
+    <li><strong>Domain:</strong> AI</li>
+    <li><strong>Duration:</strong> 8 weeks</li>
+    <li><strong>Mentor:</strong> Neela Santhosh</li>
+  </ul>
+
+  <h2>🔧 Requirements</h2>
+  <pre><code>pip install --upgrade transformers torch torchaudio accelerate
+pip install deepmultilingualpunctuation</code></pre>
+  <p>💡 <em>Recommended: Use a virtual environment like <code>conda</code> or <code>venv</code>.</em></p>
+
+  <h2>🧠 Model</h2>
+  <p>This uses the <code>"openai/whisper-medium"</code> model. You can switch to <code>"openai/whisper-large"</code> for better accuracy.</p>
+
+  <h2>📂 Usage</h2>
+  <pre><code>from transformers import pipeline
+
+# Load the Whisper model
+asr = pipeline("automatic-speech-recognition", model="openai/whisper-medium")
+
+# Provide path to your MP3 file
+file_path = "Sample Audio.mp3"
+
+# Transcribe the audio
+result = asr(file_path, return_timestamps=True)
+
+# Print nicely formatted paragraph
+print("\n📝 Transcription:\n")
+print(result["text"])</code></pre>
+
+  <h2>✅ Output</h2>
+  <p>The script outputs a punctuated paragraph of transcribed audio.</p>
+
+  <h2>✨ Optional Enhancements</h2>
+  <ul>
+    <li>Use <code>deepmultilingualpunctuation</code> for improved punctuation restoration.</li>
+    <li>Add CLI or GUI for ease of use.</li>
+  </ul>
+
+  <h2>📄 License</h2>
+  <p>MIT License. Free to use and modify.</p>
+
 </body>
 </html>
